@@ -8,6 +8,6 @@ on:
 
 jobs:
   tests:
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-rust-tests.yml@b9f83fe946adc0703a735e5172fc111409d85ee3 # 0.7.44
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-rust-tests.yml@dbd53c0dc6232899a6d8295de0345b14374ba78d # 0.7.45
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
