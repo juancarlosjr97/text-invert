@@ -2,5 +2,33 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
         "github>juancarlosjr97/one-renovate-configuration-to-rule-them-all#0.5.1"
+    ],
+    "customManagers": [
+        {
+            "customType": "regex",
+            "description": "Update Rust toolchain version in Cargo.toml",
+            "fileMatch": [
+                "(^|/)Cargo\\.toml$"
+            ],
+            "matchStrings": [
+                "rust-version\\s*=\\s*\"(?<currentValue>[^\"]+)\""
+            ],
+            "datasourceTemplate": "github-releases",
+            "depNameTemplate": "rust-lang/rust",
+            "versioningTemplate": "semver"
+        },
+        {
+            "customType": "regex",
+            "description": "Update Rust toolchain version in devcontainer.json",
+            "fileMatch": [
+                "(^|/)\\.devcontainer/devcontainer\\.json$"
+            ],
+            "matchStrings": [
+                "\"ghcr\\.io/devcontainers/features/rust:[^\"]+\"\\s*:\\s*\\{[\\s\\S]*?\"version\"\\s*:\\s*\"(?<currentValue>[^\"]+)\""
+            ],
+            "datasourceTemplate": "github-releases",
+            "depNameTemplate": "rust-lang/rust",
+            "versioningTemplate": "semver"
+        }
     ]
 }
