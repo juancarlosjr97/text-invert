@@ -3,7 +3,7 @@
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/rust:1.5.1": {
-      "version": "1.85.0"
+      "version": "1.96.0"
     }
   }
 }
